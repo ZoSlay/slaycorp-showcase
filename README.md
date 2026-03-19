@@ -7,6 +7,16 @@ slaycorp.co
 
 ---
 
+## Executive Summary
+
+SlayCorp delivers complex programs using a governance-first execution model designed for high-consequence environments. Work is structured, bounded, and independently verified at every stage to ensure accountability and control.
+
+AI is integrated as a governed execution resource within this model — accelerating delivery without removing human oversight or decision authority.
+
+The result is a repeatable system for delivering complex work with clarity, discipline, and reduced risk.
+
+---
+
 ## What This Repository Demonstrates
 
 This is not a code portfolio. It is a controlled summary of how SlayCorp
