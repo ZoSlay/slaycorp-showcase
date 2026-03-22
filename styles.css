@@ -1,0 +1,569 @@
+/* ── SlayCorp Design System ──────────────────────────
+   Extracted from SlayCorp_EngagementProposal_1.html
+   Authoritative visual specification per SC-SITE-001
+   ──────────────────────────────────────────────────── */
+
+:root {
+  --ink: #0f1923;
+  --navy: #1B2A4A;
+  --gold: #B8963E;
+  --gold-light: #D4AF6A;
+  --cream: #F9F6F0;
+  --mist: #EEE9E0;
+  --gray: #6B7280;
+  --rule: #D4C9B5;
+  --white: #FFFFFF;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+a { color: var(--gold); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--gold-light); }
+
+/* ── NAVIGATION ─────────────────────────────────── */
+.site-nav {
+  background: var(--navy);
+  padding: 0 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--white);
+  letter-spacing: 0.02em;
+  padding: 16px 0;
+}
+
+.nav-brand span { color: var(--gold); }
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mist);
+  padding: 20px 0;
+  display: block;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 16px 0;
+}
+
+/* ── PAGE CONTAINER ─────────────────────────────── */
+.page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 60px 60px 40px;
+}
+
+/* ── MASTHEAD / HERO ────────────────────────────── */
+.hero {
+  border-top: 3px solid var(--navy);
+  border-bottom: 1px solid var(--rule);
+  padding: 48px 0 40px;
+  margin-bottom: 56px;
+}
+
+.hero-company {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 38px;
+  letter-spacing: 0.02em;
+  color: var(--navy);
+  line-height: 1.1;
+}
+
+.hero-company span { color: var(--gold); }
+
+.hero-tagline {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--gray);
+  text-transform: uppercase;
+  margin-top: 12px;
+}
+
+.hero-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 8px;
+}
+
+/* ── OPENING STATEMENT ──────────────────────────── */
+.opening {
+  background: var(--navy);
+  color: var(--white);
+  padding: 40px 48px;
+  margin-bottom: 56px;
+  position: relative;
+}
+
+.opening::before {
+  content: '\201C';
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 120px;
+  color: var(--gold);
+  opacity: 0.3;
+  position: absolute;
+  top: -10px;
+  left: 24px;
+  line-height: 1;
+}
+
+.opening p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--white);
+  position: relative;
+  z-index: 1;
+}
+
+.opening-attr {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--gold-light);
+  margin-top: 16px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── SECTIONS ───────────────────────────────────── */
+.section { margin-bottom: 52px; }
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.section-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  font-weight: 600;
+  color: var(--rule);
+  line-height: 1;
+  min-width: 36px;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 8px;
+  flex: 1;
+}
+
+.section p {
+  font-size: 14.5px;
+  color: #2D3748;
+  margin-bottom: 14px;
+  line-height: 1.75;
+}
+
+/* ── CAPABILITY CARDS ───────────────────────────── */
+.capability-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.capability-card {
+  border-top: 3px solid var(--gold);
+  background: var(--white);
+  padding: 24px;
+}
+
+.capability-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.capability-card p {
+  font-size: 13.5px;
+  color: var(--gray);
+  line-height: 1.65;
+}
+
+/* ── DIFFERENTIATOR CARDS ───────────────────────── */
+.diff-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.diff-card {
+  border-left: 3px solid var(--gold);
+  background: var(--white);
+  padding: 20px 24px;
+}
+
+.diff-card h3 {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.diff-card p {
+  font-size: 13px;
+  color: var(--ink);
+  line-height: 1.65;
+}
+
+/* ── ENGAGEMENT MODEL PATH ──────────────────────── */
+.path-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin: 24px 0;
+}
+
+.path-step {
+  padding: 24px 18px;
+  background: var(--white);
+  border-top: 2px solid var(--rule);
+  position: relative;
+}
+
+.path-step.active {
+  border-top-color: var(--gold);
+  background: var(--navy);
+}
+
+.path-step::after {
+  content: '\2192';
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gold);
+  font-size: 16px;
+  z-index: 2;
+}
+
+.path-step:last-child::after { display: none; }
+
+.path-phase {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.path-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.path-step.active .path-title { color: var(--white); }
+
+.path-detail {
+  font-size: 12px;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+.path-step.active .path-detail { color: #9BADC0; }
+
+/* ── PULL QUOTE ─────────────────────────────────── */
+.pull-quote {
+  background: var(--navy);
+  padding: 36px 48px;
+  margin: 32px 0;
+  text-align: center;
+}
+
+.pull-quote-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+.pull-quote-text span {
+  color: var(--gold-light);
+}
+
+/* ── SCOPE TABLE ────────────────────────────────── */
+.scope-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+
+.scope-table thead tr { background: var(--navy); }
+
+.scope-table thead th {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--white);
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 400;
+}
+
+.scope-table tbody tr { border-bottom: 1px solid var(--rule); }
+.scope-table tbody tr:nth-child(even) { background: var(--mist); }
+
+.scope-table tbody td {
+  padding: 14px 16px;
+  font-size: 13.5px;
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.scope-table tbody td:first-child {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  white-space: nowrap;
+  width: 220px;
+}
+
+/* ── DELIVERY MODEL DIAGRAM ─────────────────────── */
+.diagram-container {
+  margin: 32px 0;
+  text-align: center;
+}
+
+.diagram-container img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+}
+
+/* ── CONTACT GRID ───────────────────────────────── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin: 24px 0;
+}
+
+.contact-block {
+  padding: 32px;
+  border: 1px solid var(--rule);
+  background: var(--white);
+}
+
+.contact-block h3 {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.contact-block p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--ink);
+}
+
+.contact-block .name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.contact-block .title-line {
+  font-size: 13px;
+  color: var(--gray);
+  margin-bottom: 16px;
+}
+
+/* ── DOWNLOAD LINKS ─────────────────────────────── */
+.downloads {
+  margin: 32px 0;
+}
+
+.download-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--gold);
+  margin-bottom: 12px;
+  transition: background 0.2s;
+}
+
+.download-link:hover {
+  background: var(--mist);
+}
+
+.download-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.download-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.download-desc {
+  font-size: 12px;
+  color: var(--gray);
+}
+
+/* ── FOOTER ─────────────────────────────────────── */
+.site-footer {
+  border-top: 1px solid var(--rule);
+  padding: 24px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.footer-left {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+.footer-right {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--rule);
+  text-transform: uppercase;
+}
+
+/* ── RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 768px) {
+  .site-nav {
+    padding: 0 24px;
+    flex-wrap: wrap;
+  }
+
+  .nav-toggle { display: block; }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+    padding-bottom: 12px;
+  }
+
+  .nav-links.open { display: flex; }
+
+  .nav-links a {
+    padding: 12px 0;
+    border-bottom: none;
+  }
+
+  .page { padding: 40px 24px 32px; }
+
+  .hero-company { font-size: 28px; }
+
+  .opening { padding: 28px 24px; }
+  .opening p { font-size: 18px; }
+
+  .diff-grid { grid-template-columns: 1fr; }
+
+  .path-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .path-step::after { display: none; }
+
+  .contact-grid { grid-template-columns: 1fr; }
+
+  .pull-quote { padding: 28px 24px; }
+  .pull-quote-text { font-size: 20px; }
+
+  .site-footer {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-company { font-size: 24px; }
+  .section-num { font-size: 32px; }
+  .section-title { font-size: 18px; }
+}
