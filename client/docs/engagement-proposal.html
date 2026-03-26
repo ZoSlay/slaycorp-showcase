@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SlayCorp Management Services — Engagement Proposal</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f1923;
+    --navy: #1B2A4A;
+    --gold: #B8963E;
+    --gold-light: #D4AF6A;
+    --cream: #F9F6F0;
+    --mist: #EEE9E0;
+    --gray: #6B7280;
+    --rule: #D4C9B5;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--white);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 64px 56px;
+  }
+
+  /* ── MASTHEAD */
+  .masthead {
+    border-top: 3px solid var(--navy);
+    border-bottom: 1px solid var(--rule);
+    padding: 28px 0 24px;
+    margin-bottom: 44px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 24px;
+  }
+
+  .company {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 32px;
+    letter-spacing: 0.02em;
+    color: var(--navy);
+    line-height: 1.1;
+  }
+
+  .company span { color: var(--gold); }
+
+  .tagline {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    color: var(--gray);
+    text-transform: uppercase;
+    margin-top: 7px;
+  }
+
+  .masthead-right { text-align: right; }
+
+  .doc-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .doc-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  .doc-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: var(--gray);
+    letter-spacing: 0.1em;
+    margin-top: 4px;
+  }
+
+  /* ── OPENING */
+  .opening {
+    background: var(--navy);
+    color: var(--white);
+    padding: 38px 46px;
+    margin-bottom: 48px;
+    position: relative;
+  }
+
+  .opening::before {
+    content: '\201C';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 110px;
+    color: var(--gold);
+    opacity: 0.3;
+    position: absolute;
+    top: -8px;
+    left: 22px;
+    line-height: 1;
+  }
+
+  .opening p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.65;
+    color: var(--white);
+    position: relative;
+    z-index: 1;
+  }
+
+  .opening-attr {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.15em;
+    color: var(--gold-light);
+    margin-top: 14px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── SECTION */
+  .section { margin-bottom: 44px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  .section-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--rule);
+    line-height: 1;
+    min-width: 34px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--navy);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 7px;
+    flex: 1;
+  }
+
+  .section p {
+    font-size: 14px;
+    color: #2D3748;
+    margin-bottom: 12px;
+    line-height: 1.75;
+  }
+
+  /* ── OVERVIEW TABLE */
+  .overview-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+  }
+
+  .overview-table tr { border-bottom: 1px solid var(--rule); }
+  .overview-table tr:nth-child(even) { background: var(--mist); }
+
+  .overview-table td {
+    padding: 11px 14px;
+    font-size: 13.5px;
+    line-height: 1.6;
+    vertical-align: top;
+  }
+
+  .overview-table td:first-child {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    width: 155px;
+    padding-top: 13px;
+  }
+
+  /* ── SCOPE TABLE */
+  .scope-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+  }
+
+  .scope-table thead tr { background: var(--navy); }
+
+  .scope-table thead th {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--white);
+    padding: 11px 14px;
+    text-align: left;
+    font-weight: 400;
+  }
+
+  .scope-table tbody tr { border-bottom: 1px solid var(--rule); }
+  .scope-table tbody tr:nth-child(even) { background: var(--mist); }
+
+  .scope-table tbody td {
+    padding: 12px 14px;
+    font-size: 13.5px;
+    vertical-align: top;
+    line-height: 1.6;
+  }
+
+  .scope-table tbody td:first-child {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--navy);
+    width: 195px;
+  }
+
+  .scope-table tbody td:last-child.metric-col {
+    font-size: 12.5px;
+    color: #2D3748;
+    background: var(--mist);
+    border-left: 2px solid var(--gold);
+  }
+
+
+  .audience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 18px 0;
+  }
+
+  .audience-card {
+    border-top: 3px solid var(--gold);
+    background: var(--mist);
+    padding: 18px 16px;
+  }
+
+  .audience-role {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 5px;
+  }
+
+  .audience-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 9px;
+  }
+
+  .audience-need {
+    font-size: 12.5px;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  .audience-value {
+    font-size: 12.5px;
+    color: var(--ink);
+    font-weight: 500;
+    margin-top: 9px;
+    padding-top: 9px;
+    border-top: 1px solid var(--rule);
+    line-height: 1.6;
+  }
+
+  /* ── QUALS TABLE */
+  .quals-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+  }
+
+  .quals-table thead tr { background: var(--navy); }
+
+  .quals-table thead th {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--white);
+    padding: 11px 14px;
+    text-align: left;
+    font-weight: 400;
+  }
+
+  .quals-table tbody tr { border-bottom: 1px solid var(--rule); }
+  .quals-table tbody tr:nth-child(even) { background: var(--mist); }
+
+  .quals-table tbody td {
+    padding: 12px 14px;
+    font-size: 13.5px;
+    vertical-align: top;
+    line-height: 1.6;
+  }
+
+  .quals-table tbody td:first-child {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+    width: 215px;
+  }
+
+  /* ── COMMERCIAL BLOCK */
+  .position-statement {
+    background: var(--mist);
+    border-left: 4px solid var(--gold);
+    padding: 26px 30px;
+    margin: 14px 0;
+  }
+
+  .position-statement p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--navy);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* ── CONTRACT TABLE */
+  .contract-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+  }
+
+  .contract-table tbody tr { border-bottom: 1px solid var(--rule); }
+  .contract-table tbody tr:nth-child(even) { background: var(--mist); }
+
+  .contract-table tbody td {
+    padding: 12px 14px;
+    font-size: 13.5px;
+    vertical-align: top;
+    line-height: 1.6;
+  }
+
+  .contract-table tbody td:first-child {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    width: 195px;
+    padding-top: 14px;
+  }
+
+  /* ── PATH ROW */
+  .path-row {
+    display: flex;
+    gap: 0;
+    margin: 14px 0;
+  }
+
+  .path-step {
+    flex: 1;
+    padding: 18px 16px;
+    background: var(--mist);
+    border-top: 2px solid var(--rule);
+    position: relative;
+  }
+
+  .path-step.active {
+    border-top-color: var(--gold);
+    background: var(--navy);
+  }
+
+  .path-step::after {
+    content: '→';
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gold);
+    font-size: 15px;
+    z-index: 2;
+  }
+
+  .path-step:last-child::after { display: none; }
+
+  .path-phase {
+    font-family: 'DM Mono', monospace;
+    font-size: 7.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 5px;
+  }
+
+  .path-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 5px;
+    line-height: 1.3;
+  }
+
+  .path-step.active .path-title { color: var(--white); }
+
+  .path-detail {
+    font-size: 11.5px;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  .path-step.active .path-detail { color: #9BADC0; }
+
+  /* ── SIGNATURE BLOCK */
+  .sig-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 36px;
+  }
+
+  .sig-block { border-top: 1px solid var(--rule); padding-top: 14px; }
+
+  .sig-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 7px;
+  }
+
+  .sig-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 3px;
+  }
+
+  .sig-title { font-size: 12px; color: var(--gray); }
+
+  .sig-line {
+    border-bottom: 1px solid var(--ink);
+    margin-top: 38px;
+    margin-bottom: 7px;
+    opacity: 0.25;
+  }
+
+  .sig-line-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    color: var(--gray);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ── FOOTER */
+  .footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 18px;
+    margin-top: 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-left {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  .footer-right {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    letter-spacing: 0.1em;
+    color: var(--rule);
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <div>
+      <div class="company">SlayCorp <span>Management Services</span></div>
+      <div class="tagline">Strategic Program Partner · Nuclearn.ai Engagement</div>
+    </div>
+    <div class="masthead-right">
+      <div class="doc-label">Engagement Proposal</div>
+      <div class="doc-title">Strategic Program Partnership</div>
+      <div class="doc-date">March 2026 · Confidential</div>
+    </div>
+  </div>
+
+  <!-- OPENING -->
+  <div class="opening">
+    <p>SlayCorp enters this engagement to accelerate what Nuclearn.ai is already doing well — delivering trusted AI to the nuclear industry — and to build the operational foundation that makes the next chapter stronger, whether that is a funding round, a strategic partnership, or a full exit event.</p>
+    <div class="opening-attr">— Strategic Intent · SlayCorp Management Services</div>
+  </div>
+
+  <!-- 01: ENGAGEMENT OVERVIEW -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">01</div>
+      <div class="section-title">Engagement Overview</div>
+    </div>
+    <p>Nuclearn.ai is a post-Series A AI company operating in a high-stakes, rapidly expanding market. With $10.5M raised, 70+ facilities served, and major technology companies driving unprecedented demand for nuclear energy, the company is well positioned for its next chapter of growth.</p>
+
+    <table class="overview-table">
+      <tbody>
+        <tr><td>Client</td><td>Nuclearn.ai</td></tr>
+        <tr><td>Engagement Type</td><td>Independent Contractor Services Agreement — SlayCorp Management Services LLC (1099-NEC)</td></tr>
+        <tr><td>Scope</td><td>Strategic Program Partner</td></tr>
+        <tr><td>Initial Term</td><td>Six (6) Months</td></tr>
+        <tr><td>Start Date</td><td>To be confirmed upon execution</td></tr>
+        <tr><td>Submitted By</td><td>SlayCorp Management Services — Lorenzo Slay Jr., Principal</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 02: SCOPE OF SERVICES -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">02</div>
+      <div class="section-title">Scope of Services</div>
+    </div>
+    <p>SlayCorp will provide embedded strategic and operational support across four interconnected areas during the initial six-month engagement.</p>
+
+    <table class="scope-table">
+      <thead>
+        <tr>
+          <th>Service Area</th>
+          <th>What SlayCorp Delivers</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Product Execution & Delivery</td>
+          <td>Drive roadmap execution in coordination with product leadership. Align engineering, product, and stakeholders around delivery objectives. Introduce structure that improves velocity without disrupting agility.</td>
+        </tr>
+        <tr>
+          <td>Customer Alignment</td>
+          <td>Strengthen engagement with key customers and operators. Establish repeatable feedback mechanisms that translate field intelligence into product and roadmap decisions. Support retention and expansion.</td>
+        </tr>
+        <tr>
+          <td>Strategic Operations</td>
+          <td>Align product efforts with revenue objectives and business growth. Provide structured visibility into execution gaps, risks, and opportunities. Support operational scaling across the portfolio.</td>
+        </tr>
+        <tr>
+          <td>Executive Extension</td>
+          <td>Translate leadership vision into executable plans. Bridge communication between the executive team and delivery functions. Support decision-making through structured analysis and program-level reporting.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 03: WHO SLAYCORP SERVES — 4 STAKEHOLDERS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">03</div>
+      <div class="section-title">Who SlayCorp Serves & How</div>
+    </div>
+    <p>This engagement touches four leadership stakeholders. Each has a distinct set of priorities. SlayCorp's value proposition is calibrated to speak to all four.</p>
+
+    <div class="audience-grid">
+      <div class="audience-card">
+        <div class="audience-role">CEO & Co-Founder</div>
+        <div class="audience-name">Bradley Fox</div>
+        <div class="audience-need">Scaling a proven AI platform in a high-demand market — sustaining the operational discipline that earned 70+ facility deployments while driving growth trajectory, investor narrative, and long-term positioning.</div>
+        <div class="audience-value">SlayCorp supports the operational discipline that sustains growth — helping the company scale without losing what made it successful.</div>
+      </div>
+      <div class="audience-card">
+        <div class="audience-role">CFO & Co-Founder</div>
+        <div class="audience-name">Jerrold Vincent</div>
+        <div class="audience-need">10+ years in utility and nuclear data analytics — focused on ensuring every operational investment produces measurable return and that financial discipline keeps pace with the company's growth trajectory.</div>
+        <div class="audience-value">SlayCorp delivers a predictable, fixed-cost engagement with defined scope and clear outcomes — making the investment straightforward to evaluate and easy to justify.</div>
+      </div>
+      <div class="audience-card">
+        <div class="audience-role">Chief Revenue Officer</div>
+        <div class="audience-name">Phil Zeringue</div>
+        <div class="audience-need">20+ years in nuclear owning the revenue relationship — focused on ensuring product delivery matches what's being sold and that customer intelligence flows back into the roadmap.</div>
+        <div class="audience-value">SlayCorp helps strengthen the connection between customer commitments and product execution — supporting the revenue relationships that drive growth.</div>
+      </div>
+      <div class="audience-card">
+        <div class="audience-role">VP of Product</div>
+        <div class="audience-name">Lorenzo Slay III</div>
+        <div class="audience-need">Leading a multi-product portfolio at a critical growth stage — balancing execution discipline with product vision while keeping customer intelligence, roadmap decisions, and cross-functional stakeholders aligned and moving.</div>
+        <div class="audience-value">SlayCorp contributes the program management structure that keeps a growing portfolio coordinated and moving — supporting product leadership in delivering on the vision.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04: QUALIFICATIONS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">04</div>
+      <div class="section-title">Qualifications</div>
+    </div>
+
+    <table class="quals-table">
+      <thead>
+        <tr>
+          <th>Credential / Experience</th>
+          <th>Detail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Security Clearance</td>
+          <td>Active DoD Top Secret / SCI (TS/SCI)</td>
+        </tr>
+        <tr>
+          <td>Education</td>
+          <td>B.S. Mathematics · M.S. Strategic Security Studies</td>
+        </tr>
+        <tr>
+          <td>Certifications</td>
+          <td>PMP — Project Management Professional Candidate (PMI) · SANS Institute Cybersecurity Certificate, currently in progress</td>
+        </tr>
+        <tr>
+          <td>Experience</td>
+          <td>20+ years in program management, infrastructure systems, and digital delivery</td>
+        </tr>
+        <tr>
+          <td>Domain Fit</td>
+          <td>Proven experience bridging technical feasibility with operational delivery in complex, regulated environments</td>
+        </tr>
+        <tr>
+          <td>Engagement Model</td>
+          <td>Agile-fluent delivery discipline applied across multi-product portfolios at scale</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 05: COMMERCIAL STRUCTURE -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">05</div>
+      <div class="section-title">Commercial Structure</div>
+    </div>
+
+    <div class="position-statement">
+      <p>$25,000 / month · Six-month initial term · Invoiced biweekly, Net 15</p>
+    </div>
+
+    <p style="margin-top:14px; font-size:13px; color:var(--gray); font-style:italic;">W-9 and invoicing issued under SlayCorp Management Services LLC. Engagement structured as an independent contractor services agreement (1099-NEC). Business travel billed separately at cost with written pre-approval.</p>
+  </div>
+
+  <!-- 06: CONTRACT TERMS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">06</div>
+      <div class="section-title">Contract Terms</div>
+    </div>
+
+    <table class="contract-table">
+      <tbody>
+        <tr>
+          <td>Contract Duration</td>
+          <td>Six (6) months from executed start date. The initial term represents a minimum commitment period; neither party may terminate prior to the 90-day review without mutual written consent, except in cases of material breach.</td>
+        </tr>
+        <tr>
+          <td>Engagement Structure</td>
+          <td>Independent Contractor Services Agreement — SlayCorp Management Services LLC (1099-NEC). SlayCorp is engaged as an independent business entity, not as an employee or agent of Nuclearn.ai. Nuclearn.ai directs the outcomes and acceptance criteria of deliverables; it does not direct the means, methods, schedule, or tools by which SlayCorp performs its work.</td>
+        </tr>
+        <tr>
+          <td>Independent Operations</td>
+          <td>SlayCorp retains the right to engage other clients during the term of this agreement, provided such engagements do not create a conflict of interest or require disclosure of Nuclearn.ai confidential information. SlayCorp is solely responsible for its own taxes, insurance, benefits, and operating expenses. Nuclearn.ai exercises no control over SlayCorp's internal staffing, tools, schedule, or work methods.</td>
+        </tr>
+        <tr>
+          <td>Invoicing</td>
+          <td>Biweekly, Net 15 from invoice receipt. Invoices issued by SlayCorp Management Services LLC.</td>
+        </tr>
+        <tr>
+          <td>Business Travel</td>
+          <td>Billed at cost with receipts; written pre-approval required. Travel is at SlayCorp's discretion as required to fulfill contracted deliverables.</td>
+        </tr>
+        <tr>
+          <td>Intellectual Property</td>
+          <td>All client-facing work product and deliverables produced under this agreement become the sole property of Nuclearn.ai upon payment of the invoice in which the deliverable is included. SlayCorp retains ownership of its proprietary methodologies, frameworks, templates, and tools used in the delivery of services, which are licensed — not transferred — to Nuclearn.ai for the duration of this engagement.</td>
+        </tr>
+        <tr>
+          <td>Confidentiality</td>
+          <td>SlayCorp agrees to maintain strict confidentiality of all proprietary, technical, operational, and financial information disclosed by Nuclearn.ai during the engagement. This obligation survives termination of the agreement for a period of two (2) years.</td>
+        </tr>
+        <tr>
+          <td>Termination for Convenience</td>
+          <td>After the 90-day minimum commitment period, either party may terminate with 30 days written notice. In the event of termination, Nuclearn.ai shall pay all fees invoiced through the termination date, plus a pro-rated fee for any deliverable in progress at the time of notice.</td>
+        </tr>
+        <tr>
+          <td>Termination for Cause</td>
+          <td>Either party may terminate immediately upon written notice in the event of material breach that remains uncured for 10 business days following written notice of the breach.</td>
+        </tr>
+        <tr>
+          <td>Limitation of Liability</td>
+          <td>SlayCorp's total liability under this agreement shall not exceed the total fees paid in the three (3) months preceding the claim. Neither party shall be liable for indirect, consequential, or punitive damages.</td>
+        </tr>
+        <tr>
+          <td>Governing Law</td>
+          <td>State of Arizona. Disputes shall be resolved through binding arbitration under AAA Commercial Rules before any litigation is initiated.</td>
+        </tr>
+        <tr>
+          <td>Eligibility</td>
+          <td>SlayCorp's principal holds U.S. citizenship, satisfying DOE export compliance and nuclear facility access requirements applicable to this engagement.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 07: STATEMENT OF DELIVERABLES -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">07</div>
+      <div class="section-title">Statement of Deliverables</div>
+    </div>
+    <p>The following deliverables define the work product SlayCorp will produce under this agreement. Each item represents a discrete, client-owned output. SlayCorp determines the means and methods of producing these deliverables independently; Nuclearn.ai approves or rejects based on the acceptance criteria stated below. Each deliverable includes one round of revisions based on written feedback from a single designated Nuclearn.ai reviewer. Additional revision rounds are subject to a change order.</p>
+
+    <table class="scope-table">
+      <thead>
+        <tr>
+          <th>Deliverable</th>
+          <th>Work Product &amp; Acceptance Criteria</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Implementation Audit &amp; Action Plan</td>
+          <td>A written audit of the active customer implementation queue, documenting current delivery gaps, schedule risks, and resource constraints across all deployment models. Delivered within 30 days of engagement start. Accepted upon receipt of a prioritized action plan with defined Time-to-Value targets for each in-flight project.</td>
+        </tr>
+        <tr>
+          <td>Implementation Playbook</td>
+          <td>A documented, repeatable implementation framework covering all three deployment models — on-premises (customer hardware), on-premises (Nuclearn hardware), and cloud-hosted. Includes project plan templates, RACI charts, milestone gates, and handoff criteria from post-sale kickoff through go-live. Delivered as a structured, version-controlled document transferable to Nuclearn.ai's internal systems.</td>
+        </tr>
+        <tr>
+          <td>Continuous Integration Framework</td>
+          <td>A written framework defining how customers transition from initial deployment into an ongoing data integration program. Includes phase definitions, success metrics, expansion triggers, and a recommended handoff model between SlayCorp-managed delivery and Nuclearn.ai's Customer Success function. Delivered as a client-owned operational document.</td>
+        </tr>
+        <tr>
+          <td>Customer Governance Package</td>
+          <td>Per active implementation: a project charter, stakeholder RACI, milestone schedule, and status reporting cadence — delivered at kickoff and maintained through go-live. Includes periodic executive-level progress summaries issued to Nuclearn.ai leadership on a cadence agreed at engagement start.</td>
+        </tr>
+        <tr>
+          <td>Product Operating Model Assessment</td>
+          <td>A written assessment of the current product organization's operational structure — covering team roles, delivery cadence, tooling, and cross-functional coordination — with a set of prioritized recommendations appropriate for an AI-native SaaS business at this stage of growth. Delivered as a standalone document; implementation of recommendations subject to separate agreement.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:16px; font-size:13px; color:var(--gray); font-style:italic;">Client-facing work product becomes the property of Nuclearn.ai upon payment. SlayCorp's proprietary delivery frameworks, templates, and methodologies embedded in these deliverables remain the intellectual property of SlayCorp Management Services LLC and are licensed to Nuclearn.ai for internal operational use only. A formal Statement of Work (SOW) detailing delivery sequencing, revision terms, and change order procedures will be executed prior to engagement start.</p>
+  </div>
+
+  <!-- 08: OPERATING ACTIVITIES & PERFORMANCE MEASUREMENT -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">08</div>
+      <div class="section-title">Operating Activities &amp; Performance Measurement</div>
+    </div>
+    <p>The following describes SlayCorp's proprietary delivery methodology — the operational practices SlayCorp deploys independently to produce the contracted outcomes in Section 07. Nuclearn.ai does not direct these activities; it receives their outputs. SlayCorp manages prioritization and sequencing of work necessary to produce the contracted deliverables. Baselines will be established within the first 30 days by mutual agreement. Performance against these metrics will be reported at the 90-day review and at engagement close.</p>
+
+    <table class="scope-table">
+      <thead>
+        <tr>
+          <th>Activity</th>
+          <th>How SlayCorp Operates</th>
+          <th style="width:220px">How We Measure Improvement</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Live Implementation Leadership</td>
+          <td>SlayCorp's delivery methodology requires direct engagement with at least one active nuclear facility implementation within the first 90 days. SlayCorp manages requirements gathering, hardware coordination or cloud provisioning, IT integration, and go-live as part of its standard implementation practice — applying its methodology end-to-end to produce a completed, validated go-live as a contracted outcome.</td>
+          <td class="metric-col">Days from kickoff to go-live, per deployment model. Baseline pulled from last 6–12 completed implementations at engagement start. Target: 20–30% reduction in average TTV by Month 6.</td>
+        </tr>
+        <tr>
+          <td>Cross-Functional Delivery Cadence</td>
+          <td>SlayCorp's implementation methodology includes a structured cross-functional coordination cadence — a weekly sync SlayCorp designs, facilitates, and owns across Engineering, Infrastructure, Security, and Customer Success, including the customer's IT counterparts where applicable. SlayCorp produces the agenda, maintains the action log, and manages the escalation path as part of its delivery practice. This cadence is a SlayCorp-owned instrument for producing the Implementation Playbook and Customer Governance Package outcomes.</td>
+          <td class="metric-col">Count of open cross-functional blockers per week. Mean days to resolve. Target: 40% reduction in open items within 60 days of cadence launch.</td>
+        </tr>
+        <tr>
+          <td>TTV &amp; Scope Tracking</td>
+          <td>SlayCorp applies a scope confirmation checkpoint at every implementation kickoff as part of its standard delivery methodology. SlayCorp independently maintains a sold scope vs. delivered scope tracker per project and produces variance reporting as a contracted output — delivered to Nuclearn.ai's designated reviewers on a cadence SlayCorp determines is appropriate to maintain project integrity.</td>
+          <td class="metric-col">% of implementations closing at full sold scope. Scope variance rate by project. Target: reduce scope slippage by 25% over the engagement term.</td>
+        </tr>
+        <tr>
+          <td>Customer Onboarding Satisfaction</td>
+          <td>SlayCorp's delivery methodology includes a post-go-live feedback loop — a structured survey and debrief process SlayCorp designs and administers independently at the close of each implementation. SlayCorp analyzes findings and incorporates them into its own playbook iteration cycle. Aggregated satisfaction data is reported to Nuclearn.ai as part of the monthly performance dashboard.</td>
+          <td class="metric-col">CSAT score at go-live. % customers completing onboarding within the target window. If no baseline exists, the first 90-day cohort establishes it. Target: measurable improvement by Month 6.</td>
+        </tr>
+        <tr>
+          <td>Security &amp; Procurement Cycle Management</td>
+          <td>SlayCorp's implementation methodology includes facility-specific security and IT procurement cycle mapping — a process SlayCorp applies independently at project initiation to identify review timelines, build compliance milestones into project plans, and proactively engage customer IT security stakeholders. This practice is part of SlayCorp's risk management methodology, not a task direction from Nuclearn.ai.</td>
+          <td class="metric-col">% of implementations where security or procurement review caused a go-live delay. Target: eliminate security/procurement-caused delays as a top-3 TTV driver within 6 months.</td>
+        </tr>
+        <tr>
+          <td>Continuous Integration Enrollment</td>
+          <td>SlayCorp's post-go-live methodology includes a structured customer transition process — a handoff practice SlayCorp develops and deploys independently to move completed implementations into the continuous integration program. SlayCorp produces the enrollment session, confirms data integration milestones with the customer, and delivers expansion trigger intelligence to Nuclearn.ai's Customer Success and Sales functions as a contracted reporting output.</td>
+          <td class="metric-col">% of go-live customers enrolled in the continuous integration program within 30 days of go-live. New expansion opportunities surfaced per cohort. Target: first cohort enrolled within 90 days of framework delivery.</td>
+        </tr>
+        <tr>
+          <td>Playbook Adoption &amp; Iteration</td>
+          <td>SlayCorp deploys a playbook orientation as part of its standard implementation methodology onboarding — a structured knowledge transfer SlayCorp designs and delivers independently to Engineering and Customer Success within the first 60 days. Playbook iteration is driven by SlayCorp's own retrospective practice; updates are issued as versioned deliverables under the Implementation Playbook line item, not as directed revisions from Nuclearn.ai.</td>
+          <td class="metric-col">% of new implementations started on-playbook. Playbook iteration frequency. Target: 100% of new implementations on-playbook by Month 3.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:16px; font-size:13px; color:var(--gray); font-style:italic;">SlayCorp will produce and deliver a performance dashboard covering these metrics on a cadence SlayCorp determines appropriate — no less than monthly. The dashboard is a contracted deliverable issued to Nuclearn.ai's designated leadership contacts. Nuclearn.ai does not direct the format, tools, or process by which SlayCorp produces this reporting.</p>
+  </div>
+
+  <!-- 09: ENGAGEMENT TRAJECTORY -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">09</div>
+      <div class="section-title">Engagement Trajectory</div>
+    </div>
+    <p>The six-month initial term is a starting point. At its conclusion, both parties will assess the contribution and determine the path forward — whether that means extending, expanding, or evolving the relationship.</p>
+
+    <div class="path-row">
+      <div class="path-step active">
+        <div class="path-phase">Now · Months 1–6</div>
+        <div class="path-title">Prove the Value</div>
+        <div class="path-detail">Embed, execute, and deliver. Build operational impact across product execution, customer alignment, and strategic operations.</div>
+      </div>
+      <div class="path-step">
+        <div class="path-phase">90-Day Review</div>
+        <div class="path-title">Expand the Scope</div>
+        <div class="path-detail">Assess contribution and scope. Revisit terms if appropriate. Deepen mandate across the business.</div>
+      </div>
+      <div class="path-step">
+        <div class="path-phase">Month 6+</div>
+        <div class="path-title">Strategic Role</div>
+        <div class="path-detail">Transition from initial engagement to sustained strategic partnership aligned to business outcomes.</div>
+      </div>
+      <div class="path-step">
+        <div class="path-phase">Long Term</div>
+        <div class="path-title">Sustained Partnership</div>
+        <div class="path-detail">Support the company's growth, operational maturity, and positioning as it moves into its next chapter.</div>
+      </div>
+    </div>
+
+    <!-- SIGNATURE BLOCK -->
+    <div class="sig-grid">
+      <div class="sig-block">
+        <div class="sig-label">SlayCorp Management Services</div>
+        <div class="sig-name">Lorenzo Slay Jr.</div>
+        <div class="sig-title">Principal</div>
+        <div class="sig-line"></div>
+        <div class="sig-line-label">Signature · Date</div>
+      </div>
+      <div class="sig-block">
+        <div class="sig-label">Nuclearn.ai</div>
+        <div class="sig-name">&nbsp;</div>
+        <div class="sig-title">&nbsp;</div>
+        <div class="sig-line"></div>
+        <div class="sig-line-label">Authorized Signature · Title · Date</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">SlayCorp Management Services LLC · Lorenzo Slay Jr., Principal</div>
+    <div class="footer-right">Confidential · March 2026</div>
+  </div>
+
+</div>
+</body>
+</html>
