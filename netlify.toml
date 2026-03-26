@@ -1,0 +1,24 @@
+# Netlify configuration for SlayCorp website
+
+# Build settings
+[build]
+  publish = "."
+
+# Password protection for client portal
+# Note: Netlify's built-in password protection requires a Team/Pro plan.
+# For the free tier, use Netlify Identity or a custom auth solution.
+# The _headers approach below adds basic auth headers.
+
+# Redirect client portal root to index
+[[redirects]]
+  from = "/client"
+  to = "/client/index.html"
+  status = 200
+
+# Headers for all pages
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

@@ -509,6 +509,294 @@ a:hover { color: var(--gold-light); }
   text-transform: uppercase;
 }
 
+/* ── TIER CARDS ─────────────────────────────────── */
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin: 24px 0;
+}
+
+.tier-card {
+  padding: 32px 24px;
+  background: var(--white);
+  border-top: 3px solid var(--rule);
+  position: relative;
+}
+
+.tier-card.tier-featured {
+  border-top-color: var(--gold);
+  background: var(--navy);
+}
+
+.tier-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.tier-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.tier-featured .tier-name { color: var(--white); }
+
+.tier-card p {
+  font-size: 13.5px;
+  color: var(--gray);
+  line-height: 1.65;
+}
+
+.tier-featured p { color: #9BADC0; }
+
+.tier-details {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--rule);
+}
+
+.tier-featured .tier-details { border-top-color: rgba(184, 150, 62, 0.3); }
+
+.tier-detail-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 8px;
+}
+
+.tier-detail-text {
+  font-size: 12.5px;
+  color: var(--gray);
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+.tier-featured .tier-detail-text { color: #9BADC0; }
+
+/* ── ENGAGEMENT GRID ───────────────────────────── */
+.engage-grid {
+  margin: 24px 0;
+}
+
+.engage-item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.engage-item:first-child { border-top: 1px solid var(--rule); }
+
+.engage-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--rule);
+  line-height: 1;
+  min-width: 32px;
+  padding-top: 2px;
+}
+
+.engage-content h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+
+.engage-content p {
+  font-size: 13.5px;
+  color: var(--gray);
+  line-height: 1.65;
+}
+
+/* ── CTA BLOCK ─────────────────────────────────── */
+.cta-block {
+  background: var(--navy);
+  padding: 48px;
+  margin: 40px 0;
+  text-align: center;
+}
+
+.cta-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 24px;
+  letter-spacing: 0.02em;
+}
+
+.cta-button {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--navy);
+  background: var(--gold);
+  padding: 14px 36px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.cta-button:hover {
+  background: var(--gold-light);
+  color: var(--navy);
+}
+
+/* ── NAV PORTAL LINK ───────────────────────────── */
+.nav-portal {
+  color: var(--gold) !important;
+  border-bottom-color: var(--gold) !important;
+}
+
+/* ── CLIENT PORTAL STYLES ──────────────────────── */
+.portal-header {
+  background: var(--navy);
+  color: var(--white);
+  padding: 32px 48px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.portal-client {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.portal-client span { color: var(--gold); }
+
+.portal-status {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(184, 150, 62, 0.15);
+  padding: 8px 16px;
+  border: 1px solid var(--gold);
+}
+
+.portal-section {
+  margin-bottom: 40px;
+}
+
+.portal-section-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.doc-list {
+  list-style: none;
+}
+
+.doc-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--gold);
+  margin-bottom: 8px;
+  transition: background 0.2s;
+}
+
+.doc-item:hover { background: var(--mist); }
+
+.doc-type {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  min-width: 36px;
+}
+
+.doc-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.doc-desc {
+  font-size: 12px;
+  color: var(--gray);
+}
+
+.update-entry {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.update-date {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.update-text {
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.7;
+}
+
+.cadence-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.cadence-item {
+  padding: 20px 24px;
+  background: var(--white);
+  border-top: 2px solid var(--gold);
+}
+
+.cadence-freq {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.cadence-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
 /* ── RESPONSIVE ─────────────────────────────────── */
 @media (max-width: 768px) {
   .site-nav {
@@ -550,6 +838,20 @@ a:hover { color: var(--gold-light); }
   .path-step::after { display: none; }
 
   .contact-grid { grid-template-columns: 1fr; }
+
+  .tier-grid { grid-template-columns: 1fr; }
+
+  .cadence-grid { grid-template-columns: 1fr; }
+
+  .cta-block { padding: 32px 24px; }
+  .cta-text { font-size: 20px; }
+
+  .portal-header {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    padding: 24px;
+  }
 
   .pull-quote { padding: 28px 24px; }
   .pull-quote-text { font-size: 20px; }
