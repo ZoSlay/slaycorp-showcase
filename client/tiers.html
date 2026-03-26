@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engagement Tiers — SlayCorp Management Services</title>
+<meta name="description" content="SlayCorp engagement tiers: Project Execution, Program Leadership, and Strategic Partnership.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="site-nav">
+  <a href="../index.html" class="nav-brand">SlayCorp <span>MS</span></a>
+  <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../capabilities.html">Capabilities</a></li>
+    <li><a href="../engagement.html">Engagement Model</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+    <li><a href="./" class="nav-portal active">Client Portal</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-company">Engagement <span>Tiers</span></div>
+    <div class="hero-tagline">Structured for Outcomes, Not Hours</div>
+  </div>
+
+  <!-- ENGAGEMENT TIERS -->
+  <div class="section">
+    <p>SlayCorp engages at three levels, each with increasing scope and strategic depth. Every tier includes defined deliverables, structured cadence, and governed accountability.</p>
+
+    <div class="tier-grid">
+      <div class="tier-card">
+        <div class="tier-label">Tier 1</div>
+        <div class="tier-name">Project Execution</div>
+        <p>Tactical delivery of bounded workstreams. Defined scope, acceptance criteria, and completion timelines. You define the objective — we deliver the result.</p>
+        <div class="tier-details">
+          <div class="tier-detail-label">Typical Scope</div>
+          <div class="tier-detail-text">Single workstream or deliverable set</div>
+          <div class="tier-detail-label">Cadence</div>
+          <div class="tier-detail-text">Weekly execution updates</div>
+        </div>
+      </div>
+      <div class="tier-card tier-featured">
+        <div class="tier-label">Tier 2</div>
+        <div class="tier-name">Program Leadership</div>
+        <p>Multi-project coordination with cross-functional accountability, stakeholder alignment, and governed delivery cycles across your organization.</p>
+        <div class="tier-details">
+          <div class="tier-detail-label">Typical Scope</div>
+          <div class="tier-detail-text">Multiple workstreams, cross-functional teams</div>
+          <div class="tier-detail-label">Cadence</div>
+          <div class="tier-detail-text">Weekly updates + biweekly stakeholder sync</div>
+        </div>
+      </div>
+      <div class="tier-card">
+        <div class="tier-label">Tier 3</div>
+        <div class="tier-name">Strategic Partnership</div>
+        <p>Business alignment, growth strategy, and long-term delivery architecture. Embedded at the executive level to drive organizational outcomes.</p>
+        <div class="tier-details">
+          <div class="tier-detail-label">Typical Scope</div>
+          <div class="tier-detail-text">Organization-wide strategy and execution</div>
+          <div class="tier-detail-label">Cadence</div>
+          <div class="tier-detail-text">Full cadence: weekly, biweekly, monthly, quarterly</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-left">SlayCorp Management Services LLC</div>
+  <div class="footer-right">slaycorp.co</div>
+</footer>
+
+<!-- NETLIFY IDENTITY AUTH GATE -->
+<script>
+(function() {
+  var protectedContent = document.querySelector('.page');
+  var footer = document.querySelector('.site-footer');
+  protectedContent.style.display = 'none';
+  footer.style.display = 'none';
+
+  var user = netlifyIdentity.currentUser();
+  if (user) {
+    protectedContent.style.display = '';
+    footer.style.display = '';
+  } else {
+    var loginBlock = document.createElement('div');
+    loginBlock.style.cssText = 'max-width:860px;margin:120px auto;padding:60px;text-align:center;';
+    loginBlock.innerHTML = '<div style="font-family:Cormorant Garamond,serif;font-size:28px;font-weight:700;color:#1B2A4A;margin-bottom:16px;">Client Portal</div>' +
+      '<p style="font-family:DM Sans,sans-serif;font-size:14px;color:#6B7280;margin-bottom:32px;">This area is restricted to authorized SlayCorp clients. Please log in to access your engagement environment.</p>' +
+      '<button onclick="netlifyIdentity.open()" style="font-family:DM Mono,monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#1B2A4A;background:#B8963E;padding:14px 36px;border:none;cursor:pointer;">Log In</button>';
+    document.querySelector('.site-nav').insertAdjacentElement('afterend', loginBlock);
+  }
+
+  netlifyIdentity.on('login', function() {
+    protectedContent.style.display = '';
+    footer.style.display = '';
+    var loginPrompt = document.querySelector('.site-nav + div');
+    if (loginPrompt) loginPrompt.remove();
+  });
+
+  netlifyIdentity.on('logout', function() {
+    window.location.reload();
+  });
+})();
+</script>
+
+</body>
+</html>
