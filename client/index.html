@@ -68,6 +68,15 @@
   protectedContent.style.display = 'none';
   footer.style.display = 'none';
 
+  // If invite/confirmation/recovery token in URL, let widget handle it automatically
+  var hash = window.location.hash;
+  if (hash.match(/#invite_token=|#confirmation_token=|#recovery_token=/)) {
+    // Widget will auto-open signup/password form when it detects the token
+    netlifyIdentity.on('init', function() {
+      netlifyIdentity.open();
+    });
+  }
+
   // Check if user is logged in
   var user = netlifyIdentity.currentUser();
   if (user) {

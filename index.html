@@ -7,6 +7,13 @@
 <meta name="description" content="SlayCorp delivers execution, program leadership, and strategic alignment for organizations that need results — not headcount. Governed delivery for high-consequence environments.">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  // Redirect invite/recovery tokens to the client portal where the full auth gate lives
+  if (window.location.hash.match(/#invite_token=|#confirmation_token=|#recovery_token=/)) {
+    window.location.href = '/client/' + window.location.hash;
+  }
+</script>
 </head>
 <body>
 
