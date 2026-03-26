@@ -7,6 +7,7 @@
 <meta name="description" content="SlayCorp client delivery portal. Secure access to engagement documents, deliverables, and project updates.">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
@@ -58,6 +59,44 @@
   <div class="footer-left">SlayCorp Management Services LLC</div>
   <div class="footer-right">slaycorp.co</div>
 </footer>
+
+<!-- NETLIFY IDENTITY AUTH GATE -->
+<script>
+(function() {
+  var protectedContent = document.querySelector('.page');
+  var footer = document.querySelector('.site-footer');
+  protectedContent.style.display = 'none';
+  footer.style.display = 'none';
+
+  // Check if user is logged in
+  var user = netlifyIdentity.currentUser();
+  if (user) {
+    protectedContent.style.display = '';
+    footer.style.display = '';
+  } else {
+    // Show login prompt
+    var loginBlock = document.createElement('div');
+    loginBlock.style.cssText = 'max-width:860px;margin:120px auto;padding:60px;text-align:center;';
+    loginBlock.innerHTML = '<div style="font-family:Cormorant Garamond,serif;font-size:28px;font-weight:700;color:#1B2A4A;margin-bottom:16px;">Client Portal</div>' +
+      '<p style="font-family:DM Sans,sans-serif;font-size:14px;color:#6B7280;margin-bottom:32px;">This area is restricted to authorized SlayCorp clients. Please log in to access your engagement environment.</p>' +
+      '<button onclick="netlifyIdentity.open()" style="font-family:DM Mono,monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#1B2A4A;background:#B8963E;padding:14px 36px;border:none;cursor:pointer;">Log In</button>';
+    document.querySelector('.site-nav').insertAdjacentElement('afterend', loginBlock);
+  }
+
+  // Handle login
+  netlifyIdentity.on('login', function() {
+    protectedContent.style.display = '';
+    footer.style.display = '';
+    var loginPrompt = document.querySelector('.site-nav + div');
+    if (loginPrompt) loginPrompt.remove();
+  });
+
+  // Handle logout
+  netlifyIdentity.on('logout', function() {
+    window.location.reload();
+  });
+})();
+</script>
 
 </body>
 </html>
