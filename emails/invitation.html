@@ -1,0 +1,81 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: #F9F6F0;
+      margin: 0;
+      padding: 0;
+      color: #1B2A4A;
+    }
+    .wrapper {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 40px 24px;
+    }
+    .brand {
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #B8963E;
+      margin-bottom: 32px;
+    }
+    h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #1B2A4A;
+      margin: 0 0 16px 0;
+      line-height: 1.3;
+    }
+    p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #374151;
+      margin: 0 0 20px 0;
+    }
+    .btn {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #1B2A4A;
+      background-color: #B8963E;
+      padding: 14px 36px;
+      margin: 12px 0 32px 0;
+    }
+    .divider {
+      border: none;
+      border-top: 1px solid #E5E1D8;
+      margin: 32px 0;
+    }
+    .footer {
+      font-size: 12px;
+      color: #9CA3AF;
+      line-height: 1.6;
+    }
+    .footer a {
+      color: #B8963E;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="brand">SlayCorp Management Services</div>
+    <h1>You've been invited to the Client Portal</h1>
+    <p>You have been invited to access the SlayCorp Client Portal, your secure environment for engagement documents, deliverables, and project updates.</p>
+    <p>Click the button below to accept your invitation and set up your account.</p>
+    <a class="btn" href="{{ .SiteURL }}/client/#invite_token={{ .Token }}">Accept Invitation</a>
+    <hr class="divider">
+    <div class="footer">
+      <p>SlayCorp Management Services LLC<br>
+      <a href="{{ .SiteURL }}">slaycorp.co</a></p>
+      <p>If you did not expect this invitation, you can safely ignore this email.</p>
+    </div>
+  </div>
+</body>
+</html>
